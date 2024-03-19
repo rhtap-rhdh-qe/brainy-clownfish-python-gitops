@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: brainy-clownfish-python-gitops
+  description: This is GitOps manifest for brainy-clownfish-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: brainy-clownfish-python
+    janus-idp.io/tekton: brainy-clownfish-python 
+    backstage.io/kubernetes-id: brainy-clownfish-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:brainy-clownfish-python
